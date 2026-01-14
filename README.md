@@ -21,7 +21,7 @@ npm install
 npm start
 ```
 
-http://localhost:3000 접속
+[http://localhost:3000 ](https://url-shortener-lr73.onrender.com/)접속
 
 ## 배포
 
