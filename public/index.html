@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL 단축기</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>URL 단축기</h1>
+      <p>긴 URL을 짧게 줄여보세요</p>
+    </header>
+
+    <main>
+      <section class="shorten-form">
+        <form id="url-form">
+          <input type="url" id="original-url" placeholder="https://example.com/very/long/url" required>
+          <button type="submit">단축하기</button>
+        </form>
+      </section>
+
+      <section id="result" class="result hidden">
+        <h2>단축 URL</h2>
+        <div class="short-url">
+          <input type="text" id="short-url" readonly>
+          <button id="copy-btn">복사</button>
+        </div>
+        <div class="stats">
+          <span>클릭 수: <strong id="click-count">0</strong></span>
+        </div>
+      </section>
+
+      <section class="recent-urls">
+        <h2>최근 단축 URL</h2>
+        <div id="url-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

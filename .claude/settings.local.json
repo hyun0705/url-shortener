@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp add context7 -- npx -y @upstash/context7-mcp@latest)",
+      "Bash(claude mcp:*)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(powershell -Command \"Expand-Archive -Path ''$env:TEMP\\\\D2Coding.zip'' -DestinationPath ''$env:TEMP\\\\D2Coding'' -Force\")",
+      "Bash(dir \"C:\\\\Users\\\\hyun\\\\Downloads\\\\D2Coding-Ver1.3.2-20180524\\\\D2Coding\")",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}
