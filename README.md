@@ -29,6 +29,32 @@ Render 무료 티어로 배포됨.
 
 ⚠️ 무료 티어는 비활성 시 서버가 꺼집니다. 첫 접속 시 30초~1분 정도 기다려주세요.
 
+## 동작 흐름
+
+### URL 단축
+
+```
+1. [main.js] 사용자가 URL 입력 후 버튼 클릭
+2. [main.js] fetch('/api/shorten', { url }) 요청
+3. [app.js] /api 요청 → urls.js로 전달
+4. [urls.js] URL 유효성 검사
+5. [urls.js] crypto.randomBytes(3)로 6자리 랜덤 코드 생성
+6. [urls.js] DB에 INSERT (code, original_url)
+7. [urls.js] { code, clicks } 응답
+8. [main.js] 화면에 단축 URL 표시
+```
+
+### 리다이렉트
+
+```
+1. [브라우저] 단축 URL 접속 (예: /a1b2c3)
+2. [app.js] /:code 라우트에서 받음
+3. [app.js] DB에서 code로 원본 URL 조회
+4. [app.js] clicks + 1 업데이트
+5. [app.js] res.redirect(원본 URL)
+6. [브라우저] 원본 URL로 이동
+```
+
 ## API
 
 | 메서드 | 경로 | 설명 |
